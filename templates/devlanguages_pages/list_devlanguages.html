@@ -1,0 +1,44 @@
+<html>
+    <head>
+        <title>Detalhes de linguagens de programação</title>
+        <link href="{{ url_for('static', path='/css/bootstrap.css') }}" rel="stylesheet">
+        <script src="static/js/bootstrap.min.js"></script>
+    </head>
+    <body>
+        {% if onDelete == True %}
+            <div class="alert alert-danger alert-dismissible fade show">
+                <h4 class="alert-heading"><i class="bi-exclamation-octagon-fill"></i> Oops! Ocorreu um erro.</h4>
+                <p>Não é possível remover uma linguagem de programação da listagem se houver algum programador que programe nela.</p>
+                <hr>
+                <p class="mb-0">Para continuar com a remoção é necessário remover os programadores que programam nesta linguagem.</p>
+                <a href="http://localhost:8000/linguagemprog"><button type="button" class="btn-close" data-bs-dismiss="alert"></button></a>
+            </div>
+        {% endif %}
+        <form>
+        <div class="container w-50">
+            <h1> Lista de linguagens de programação</h1>
+
+            <table class="table  table-hover table-sm">
+                <thead>
+                <td>ID da linguagem</td>
+                <td>Nome da linguagem</td>
+                <td>Nome do programador</td>
+                <td>&nbsp;</td>
+        </thead>
+                {% for devsLanguages in devsLanguages_list %}
+                <tr>
+                    <td><a href="http://localhost:8000/linguagemprog/{{devsLanguages.id_linguagem}}">{{devsLanguages.id_linguagem}}</a></td>
+                    <td>{{devsLanguages.nome_linguagem}}</td>
+                    <td><a href="http://localhost:8000/programador/{{devsLanguages.id_programador}}">{{devsLanguages.nome_programador}}</a></td>
+                    <td>
+                        <a class="btn btn-danger" href="http://localhost:8000/programling/delete/{{devsLanguages.id_linguagem}}/{{devsLanguages.id_programador}}">Deletar</a>
+                    </td>
+                </tr>
+
+                {% endfor %}
+            </table>
+            <a class="btn btn-success" href="http://localhost:8000/programling/createui">Criar uma novo programador</a>
+        </div>
+        </form>
+    </body>
+</html>

@@ -1,0 +1,33 @@
+<html>
+    <head>
+        <title>Item Details</title>
+        <link href="{{ url_for('static', path='/css/bootstrap.css') }}" rel="stylesheet">
+    </head>
+    <body>
+        <div class="container w-50">
+        <div class="card text-left" style="width: 32rem;align:center;">
+            <div class="card-body">
+            <div class="card-header">
+                <h1> Editar Startup </h1>
+            </div>
+                <form action="http://localhost:8000/startup/update/{{startup.id_startup}}" method="post">
+                        <div class="mb-3">
+                            <label for="fishId" class="form-label">ID da Startup</label>
+                            <input type="text" class="form-control" id="id_startup" name="id_startup" value="{{startup.id_startup}}" readonly>
+                        </div>
+                        <div class="mb-3">
+                            <label for="fishName" class="form-label">Nome da Startup</label>
+                            <input type="text" class="form-control" id="nome_startup"  name="nome_startup" value="{{startup.nome_startup}}">
+                        </div>
+                        <div class="mb-3">
+                            <label for="fishDescription" class="form-label">Cidade sede</label>
+                            <input type="text" class="form-control" id="cidade_sede"  name="cidade_sede" value="{{startup.cidade_sede}}">
+                        </div>
+
+                        <input type="submit" class="btn btn-primary"> &nbsp;&nbsp;&nbsp;&nbsp;<input type="reset" class="btn btn-danger">
+                </form>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,59 @@
+<html>
+    <head>
+        <title>Item Details</title>
+        <link href="{{ url_for('static', path='/css/bootstrap.css') }}" rel="stylesheet">
+    </head>
+    <body>
+        <div class="container w-50">
+        <div class="card text-left" style="width: 32rem;align:center;">
+            <div class="card-body">
+            <div class="card-header">
+                <h1> Editar programador </h1>
+            </div>
+                <form action="http://localhost:8000/programador/update/{{developer.id_programador}}" method="post">
+                    <div class="mb-3">
+                        <label for="fishDescription" class="form-label">Nome do programador</label>
+                        <input type="text" class="form-control" id="nome_programador"  name="nome_programador" value="{{developer.nome_programador}}">
+                    </div>
+                    <div class="mb-3">
+                        <label for="fishDescription" class="form-label">E-mail</label>
+                        <input type="text" class="form-control" id="email"  name="email" value="{{developer.email}}">
+                    </div>
+                    <div class="mb-3">
+                        <label for="fishId" class="form-label">ID do Programador</label>
+                        <input type="text" class="form-control" id="id_programador" name="id_programador" value="{{developer.id_programador}}" readonly>
+                    </div>
+                    <div class="mb-3">
+                        <label for="fishName" class="form-label">ID da Startup</label>
+                        <input type="text" class="form-control" id="id_startup"  name="id_startup" value="{{developer.id_startup}}">
+                    </div>
+                    <div class="mb-3">
+                        <label for="fishName" class="form-label">Gênero: </label> &nbsp;&nbsp;&nbsp;&nbsp;
+                        <div class="form-check form-check-inline">
+                            {% if developer.genero == 'M' %}
+                                <input class="form-check-input" type="checkbox" id="genero" name="genero" value="M" checked>
+                            {% else %}
+                                <input class="form-check-input" type="checkbox" id="genero" name="genero" value="M">
+                            {% endif %}
+                            <label class="form-check-label" for="inlineCheckbox1">Masculino</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            {% if developer.genero == 'F' %}
+                                <input class="form-check-input" type="checkbox" id="genero" name="genero" value="F" checked>
+                            {% else %}
+                                <input class="form-check-input" type="checkbox" id="genero" name="genero" value="F">
+                            {% endif %}
+                            <label class="form-check-label" for="inlineCheckbox2">Feminino</label>
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="fishName" class="form-label">Data de nascimento: </label>
+                        <input type="date" id="data_nascimento" name="data_nascimento" value="{{developer.data_nascimento}}">
+                    </div>
+                    <input type="submit" class="btn btn-primary"> &nbsp;&nbsp;&nbsp;&nbsp;<input type="reset" class="btn btn-danger">
+                </form>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

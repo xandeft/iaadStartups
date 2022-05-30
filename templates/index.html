@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Projeto Startup</title>
+        <link href="{{ url_for('static', path='/css/bootstrap.css') }}" rel="stylesheet">
+        <script src="static/js/bootstrap.min.js"></script>
+    </head>
+
+    <body>
+        <div class="container w-50 ">
+        <h1>Projeto Startup</h1>
+        <hr class="text-primary">
+        <p>Bem vindo ao Projeto Startup, aqui você consegue gerenciar os dados da sua startup e seus recursos.</p>
+        <div class="row row-cols-1 row-cols-md-2 g-4">
+            <div class="col">
+              <div class="card">
+                <div class="card-body">
+                  <h5 class="card-title">Startups</h5>
+                  <p class="card-text">Neste card é possível acessar os dados das Startups listadas ou cria-las.
+                      Clique <a href="http://localhost:8000/startup">aqui</a> para acessar.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="col">
+              <div class="card">
+                <div class="card-body">
+                  <h5 class="card-title">Programadores</h5>
+                  <p class="card-text">Neste card é possível acessar os dados dos Programador listados ou cria-los.
+                    Clique <a href="http://localhost:8000/programador">aqui</a> para acessar.
+                </p>
+                </div>
+              </div>
+            </div>
+            <div class="col">
+              <div class="card">
+                <div class="card-body">
+                  <h5 class="card-title">Linguagens</h5>
+                  <p class="card-text">Neste card é possível acessar os dados das Linguagens de programação listadas ou cria-las.
+                    Clique <a href="http://localhost:8000/linguagemprog">aqui</a> para acessar.
+                </p>
+                </div>
+              </div>
+            </div>
+            <div class="col">
+              <div class="card">
+                <div class="card-body">
+                  <h5 class="card-title">Programadores e suas linguagens</h5>
+                  <p class="card-text">Neste card é possível acessar os dados das Linguagens e seus programadores listadas ou cria-las.
+                    Clique <a href="http://localhost:8000/programling">aqui</a> para acessar.
+                </p>
+                </div>
+              </div>
+            </div>
+          </div>
+    </body>
+</html>

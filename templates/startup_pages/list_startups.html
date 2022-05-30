@@ -1,0 +1,38 @@
+<html>
+    <head>
+        <title>Detalhes de Startups</title>
+        <link href="{{ url_for('static', path='/css/bootstrap.css') }}" rel="stylesheet">
+        <script src="static/js/bootstrap.min.js"></script>
+    </head>
+    <body>
+        <form>
+        <div class="container w-50">
+            <h1> Lista de Statups </h1>
+
+            <table class="table  table-hover table-sm">
+                <thead>
+                <td>ID</td>
+                <td>Nome</td>
+                <td>Cidade Sede</td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+        </thead>
+                {% for startup in startup_list %}
+                <tr>
+                    <td><a href="http://localhost:8000/startup/{{startup.id_startup}}">{{startup.id_startup}}</a></td>
+                    <td>{{startup.nome_startup}}</td>
+                    <td>{{startup.cidade_sede}}</td>
+                    <td><a class="btn btn-warning" href="http://localhost:8000/startup/edit/{{startup.id_startup}}">Editar</a></td>
+                    <td>
+                        <a class="btn btn-danger" href="http://localhost:8000/startup/delete/{{startup.id_startup}}">Deletar</a>
+
+                    </td>
+                </tr>
+
+                {% endfor %}
+            </table>
+            <a class="btn btn-success" href="http://localhost:8000/startup/createui">Criar uma nova startup</a>
+        </div>
+        </form>
+    </body>
+</html>

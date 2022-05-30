@@ -1,0 +1,21 @@
+<html>
+    <head>
+        <title>Item Details</title>
+        <link href="{{ url_for('static', path='/css/bootstrap.css') }}" rel="stylesheet">
+    </head>
+    <body>
+        <div class="container w-50">
+            <h1>Detalhes do Programador</h1>
+            <hr width="55%"/>
+            <div class="card" style="width: 28rem;">
+                <div class="card-body">
+                    <h5 class="card-title">Nome: {{developer.nome_programador}}</h5>
+                    <p class="card-text">Data de nascimento: {{developer.data_nascimento}}</p>
+                    <p class="card-text">Gênero: {{developer.genero}}</p>
+                    <p class="card-text">E-mail: {{developer.email}}</p>
+                    <p class="card-text">Startup: <a href="http://localhost:8000/startup/{{developer.id_startup}}">{{developer.id_startup}}</a></p>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

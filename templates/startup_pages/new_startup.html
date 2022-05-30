@@ -1,0 +1,28 @@
+<html>
+    <head>
+        <title>Item Details</title>
+        <link href="{{ url_for('static', path='/css/bootstrap.css') }}" rel="stylesheet">
+    </head>
+    <body>
+        <div class="container w-50">
+        <div class="card text-left" style="width: 32rem;align:center;">
+            <div class="card-body">
+            <div class="card-header">
+                <h1> Create a Startup </h1>
+            </div>
+                <form action="http://localhost:8000/startup" method="post">
+                        <div class="mb-3">
+                            <label for="fishName" class="form-label">Nome da Startup</label>
+                            <input type="text" class="form-control" id="nome_startup"  name="nome_startup" placeholder="Nome da Startup">
+                        </div>
+                        <div class="mb-3">
+                            <label for="fishImage" class="form-label">Cidade Sede</label>
+                            <input type="text" class="form-control" id="cidade_sede"  name="cidade_sede" placeholder="Cidade Sede">
+                        </div>
+                        <input type="submit" class="btn btn-primary"> &nbsp;&nbsp;&nbsp;&nbsp;<input type="reset" class="btn btn-danger">
+                </form>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

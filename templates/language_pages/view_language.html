@@ -1,0 +1,25 @@
+<html>
+    <head>
+        <title>Item Details</title>
+        <link href="{{ url_for('static', path='/css/bootstrap.css') }}" rel="stylesheet">
+    </head>
+    <body>
+        <div class="container w-50">
+            <h1>Detalhes da linguagem de programação</h1>
+            <hr width="55%"/>
+            <div class="card" style="width: 28rem;">
+                <div class="card-body">
+                    <h5 class="card-title">Nome da Linguagem: {{language.nome_linguagem}}</h5>
+                    <hr>
+                    <p class="card-text">Ano de lançamento: {{language.ano_lancamento}}</p>
+                    <p class="card-text">Quantidade de programadores: {{language.lenDevs}}</p>
+                    <ul class="list-group">
+                        {% for dev in language.devs %}
+                            <li class="list-group-item">{{dev}}</li>
+                        {% endfor %}
+                      </ul>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

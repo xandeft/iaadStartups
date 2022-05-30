@@ -1,0 +1,28 @@
+<html>
+    <head>
+        <title>Item Details</title>
+        <link href="{{ url_for('static', path='/css/bootstrap.css') }}" rel="stylesheet">
+    </head>
+    <body>
+        <div class="container w-50">
+        <div class="card text-left" style="width: 32rem;align:center;">
+            <div class="card-body">
+            <div class="card-header">
+                <h1> Criar um novo dado </h1>
+            </div>
+                <form action="http://localhost:8000/programling" method="post">
+                        <div class="mb-3">
+                            <label for="fishName" class="form-label">Nome da linguagem</label>
+                            <input type="text" class="form-control" id="nome_linguagem"  name="nome_linguagem" placeholder="Nome da linguagem">
+                        </div>
+                        <div class="mb-3">
+                            <label for="fishImage" class="form-label">ID do programador</label>
+                            <input type="text" class="form-control" id="id_programador"  name="id_programador" placeholder="ID do programador">
+                        </div>
+                        <input type="submit" class="btn btn-primary"> &nbsp;&nbsp;&nbsp;&nbsp;<input type="reset" class="btn btn-danger">
+                </form>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
